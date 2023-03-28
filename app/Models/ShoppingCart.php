@@ -14,7 +14,7 @@ class ShoppingCart extends Model
 
     public static function getCurrentUserOrders($user_id)
     {
-        $shoppingcarts = DB::table('shoppingcart')->where("instance", "{$user_id}")->get();
+        $shoppingcarts = DB::table('shoppingcart')->where("instance", "{$user_id}")->orderBy('created_at', 'asc')->get();
 
         $orders = [];
 

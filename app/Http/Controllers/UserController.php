@@ -12,6 +12,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\DB;
 use Laravel\Ui\Presets\React;
+use Log;
 
 class UserController extends Controller
 {
@@ -108,7 +109,7 @@ class UserController extends Controller
         $billings = ShoppingCart::getCurrentUserOrders($user_id);
         $total = count($billings);
         $billings = new LengthAwarePaginator(array_slice($billings, ($page - 1) * 15, 15), $total, 15, $page, array('path' => $request->url()));
-
+        Log::info($total);
         return view('users.cart_history_index', compact('billings', 'total'));
     }
 

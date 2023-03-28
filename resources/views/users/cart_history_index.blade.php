@@ -38,6 +38,9 @@
              {{ $billings->links() }}
          </div>
      </div>
+     <!-- @php
+         var_dump($billings);
+         @endphp -->
  </div>
  
  @endsection

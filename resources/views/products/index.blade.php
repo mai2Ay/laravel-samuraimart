@@ -41,9 +41,9 @@
                  @endforeach
              </div>
          </div>
-         @php
-         var_dump($product->name);
-         @endphp
+         <!-- @php
+         var_dump($product);
+         @endphp -->
          {{ $products->appends(request()->query())->links() }}
      </div>
  </div>
